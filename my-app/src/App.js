@@ -25,12 +25,12 @@ function App() {
   //use current logged in user
   const { currentUser } = useContext(AuthContext);
 
-  useEffect(() => {
-    window.addEventListener('beforeunload', (event) => {
-      event.preventDefault();
-      event.returnValue = '';
-    });
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener('beforeunload', (event) => {
+  //     event.preventDefault();
+  //     event.returnValue = '';
+  //   });
+  // }, []);
 
   // console.log(process.env.REACT_APP_CLIENT_ID);//printing it to console
 

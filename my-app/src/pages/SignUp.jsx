@@ -33,6 +33,10 @@ import { Avatar } from "@mui/material";
 
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
+import {
+  SEKRET_KEY_NOTE_SAFE,
+  SEKRET_KEY,
+} from "../keys";
 // imports are finished --------------------------------------------------------------------------------------
 
 //styling our Link Api
@@ -84,7 +88,9 @@ const SignUp = (props) => {
 
   // Yup Validation schema ------------------------------------------
   //TODO: later use regex to validate password better, Verify email
-  const SEKRET = process.env.REACT_APP_SEKRET_KEY;
+  // const SEKRET = process.env.REACT_APP_SEKRET_KEY;
+  //const SEKRET = SEKRET_KEY
+  const SEKRET = SEKRET_KEY_NOTE_SAFE
 
 
   // console.log(process.env);
@@ -97,6 +103,7 @@ const SignUp = (props) => {
     //   .matches(regex)
     //   .min(6, "Too Short!")
     //   .required("Required"),
+
     password: Yup.string().min(6, "Too Short!").required("Required"),
     confirmPassword: Yup.string()
       .required("Required")
@@ -107,7 +114,11 @@ const SignUp = (props) => {
       .test(
         "correct",
         "Incorrect Secret Key",
-        async (value) => (await value) === SEKRET
+
+        // #TODO: Remove this later
+        // async (value) => (await value) === SEKRET
+        async (value) => (await value) ===  SEKRET
+       
       ),
   });
   //--------------------------------------------------------------------------
