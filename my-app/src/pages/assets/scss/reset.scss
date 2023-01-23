@@ -1,0 +1,29 @@
+.formWrapperReset {
+    background-color: #fff;
+    padding: 30px 60px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+
+    .logo {
+      color: #0a639e;
+      font-weight: bold;
+      font-size: 24px;
+    }
+
+    .title {
+      color: #0a689e;
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
+
