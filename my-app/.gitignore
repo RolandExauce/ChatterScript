@@ -24,4 +24,4 @@ yarn-error.log*
 
 
 .env
-/src/keys.js
+keys.js
